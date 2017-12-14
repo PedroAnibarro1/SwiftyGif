@@ -25,12 +25,12 @@ fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-let _imageSourceKey = malloc(4)
-let _displayRefreshFactorKey = malloc(4)
-let _imageCountKey = malloc(4)
-let _displayOrderKey = malloc(4)
-let _imageSizeKey = malloc(4)
-let _imageDataKey = malloc(4)
+let _imageSourceKey: UnsafeMutableRawPointer! = malloc(4)
+let _displayRefreshFactorKey: UnsafeMutableRawPointer! = malloc(4)
+let _imageCountKey: UnsafeMutableRawPointer! = malloc(4)
+let _displayOrderKey: UnsafeMutableRawPointer! = malloc(4)
+let _imageSizeKey: UnsafeMutableRawPointer! = malloc(4)
+let _imageDataKey: UnsafeMutableRawPointer! = malloc(4)
 
 let defaultLevelOfIntegrity: Float = 0.8
 
@@ -290,7 +290,7 @@ public extension UIImage {
     
     public var imageSource: CGImageSource? {
         get {
-            let result = objc_getAssociatedObject(self, _imageSourceKey)
+            let result = objc_getAssociatedObject(self, _imageSourceKey!)
             if result == nil {
                 return nil
             }
