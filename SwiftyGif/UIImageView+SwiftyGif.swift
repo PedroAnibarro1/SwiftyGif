@@ -16,17 +16,17 @@ fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-let _gifImageKey = malloc(4)
-let _cacheKey = malloc(4)
-let _currentImageKey = malloc(4)
-let _displayOrderIndexKey = malloc(4)
-let _syncFactorKey = malloc(4)
-let _haveCacheKey = malloc(4)
-let _loopCountKey = malloc(4)
-let _displayingKey = malloc(4)
-let _isPlayingKey = malloc(4)
-let _animationManagerKey = malloc(4)
-let _delegateKey = malloc(4)
+let _gifImageKey: UnsafeMutableRawPointer! = malloc(4)
+let _cacheKey: UnsafeMutableRawPointer! = malloc(4)
+let _currentImageKey: UnsafeMutableRawPointer! = malloc(4)
+let _displayOrderIndexKey: UnsafeMutableRawPointer! = malloc(4)
+let _syncFactorKey: UnsafeMutableRawPointer! = malloc(4)
+let _haveCacheKey: UnsafeMutableRawPointer! = malloc(4)
+let _loopCountKey: UnsafeMutableRawPointer! = malloc(4)
+let _displayingKey: UnsafeMutableRawPointer! = malloc(4)
+let _isPlayingKey: UnsafeMutableRawPointer! = malloc(4)
+let _animationManagerKey: UnsafeMutableRawPointer! = malloc(4)
+let _delegateKey: UnsafeMutableRawPointer! = malloc(4)
 
 @objc public protocol SwiftyGifDelegate {
     @objc optional func gifDidStart(sender: UIImageView)
