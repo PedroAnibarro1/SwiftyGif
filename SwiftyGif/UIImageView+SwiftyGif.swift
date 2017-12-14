@@ -323,11 +323,11 @@ public extension UIImageView {
     // PRAGMA - get / set associated values
 
     fileprivate func value<T>(_ key:UnsafeMutableRawPointer?, _ defaultValue:T) -> T {
-        return (objc_getAssociatedObject(self, key) as? T) ?? defaultValue
+        return (objc_getAssociatedObject(self, key!) as? T) ?? defaultValue
     }
 
     fileprivate func possiblyNil<T>(_ key:UnsafeMutableRawPointer?) -> T? {
-        let result = objc_getAssociatedObject(self, key)
+        let result = objc_getAssociatedObject(self, key!)
         return (result as? T)
     }
 
